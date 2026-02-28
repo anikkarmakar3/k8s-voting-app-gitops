@@ -11,6 +11,6 @@ commonLabels:
 
 replicas:
   - name: vote
-    count: 3
+    count: 5
   - name: result
     count: 3
