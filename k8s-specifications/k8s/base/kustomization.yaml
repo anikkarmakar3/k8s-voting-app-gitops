@@ -11,4 +11,3 @@ resources:
   - vote-deployment.yaml
   - vote-service.yaml
   - worker-deployment.yaml
-  - voting-app.yaml
