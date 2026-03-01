@@ -37,16 +37,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Update vote image
-        run: |
-          sed -i "s|image: anik1999/vote-app:.*|image: anik1999/vote-app:${{ github.sha }}|" k8s-specifications/k8s/base/vote-deployment.yaml
+      - name: Update vote image tag
+ 	 run: |
+    	   sed -i '/name: anik1999\/vote-app/{n;s|newTag:.*|newTag: "${{ github.sha }}"|}' k8s-specifications/k8s/overlays/dev/kustomization.yaml
 
-      - name: Update result image
-        run: |
-          sed -i "s|image: anik1999/result-app:.*|image: anik1999/result-app:${{ github.sha }}|" k8s-specifications/k8s/base/result-deployment.yaml
-
+      - name: Update result image tag
+ 	 run: |
+    	   sed -i '/name: anik1999\/result-app/{n;s|newTag:.*|newTag: "${{ github.sha }}"|}' k8s-specifications/k8s/overlays/dev/kustomization.yaml      
       - name: Commit changes
-        run: |
+	 run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add .
