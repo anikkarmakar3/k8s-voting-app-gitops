@@ -1,0 +1,34 @@
+name: Promote to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Image tag to promote (commit SHA)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update vote image tag
+        run: |
+          sed -i '/name: anik1999\/vote-app/{n;s|newTag:.*|newTag: "${{ github.event.inputs.image_tag }}"|}' k8s-specifications/k8s/overlays/prod/kustomization.yaml
+
+      - name: Update result image tag
+        run: |
+          sed -i '/name: anik1999\/result-app/{n;s|newTag:.*|newTag: "${{ github.event.inputs.image_tag }}"|}' k8s-specifications/k8s/overlays/prod/kustomization.yaml
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Promote image to prod: ${{ github.event.inputs.image_tag }}"
+          git push
