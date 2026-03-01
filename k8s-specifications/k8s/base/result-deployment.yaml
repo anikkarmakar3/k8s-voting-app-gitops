@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: anik1999/result-app:0efcf5726cb99d8f8ecaecb96efc972b5ebed065
+      - image: anik1999/result-app:c2308b81d8e7d0970bbeafa30bcdd68fc7ec6841
         name: result
         ports:
         - containerPort: 80

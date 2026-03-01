@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: anik1999/vote-app:0efcf5726cb99d8f8ecaecb96efc972b5ebed065
+      - image: anik1999/vote-app:c2308b81d8e7d0970bbeafa30bcdd68fc7ec6841
         name: vote
         ports:
         - containerPort: 80
