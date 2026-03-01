@@ -17,6 +17,6 @@ replicas:
 
 images:
   - name: anik1999/vote-app
-    newTag: "stable"
+    newTag: "79da3b7"
   - name: anik1999/result-app
-    newTag: "stable"
+    newTag: "79da3b7"
