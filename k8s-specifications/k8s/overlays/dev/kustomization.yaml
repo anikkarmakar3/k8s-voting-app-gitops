@@ -14,3 +14,9 @@ replicas:
     count: 1
   - name: result
     count: 1
+
+images:
+  - name: anik1999/vote-app
+    newTag: "latest"
+  - name: anik1999/result-app
+    newTag: "latest"		
