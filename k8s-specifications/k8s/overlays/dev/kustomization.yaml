@@ -17,6 +17,6 @@ replicas:
 
 images:
   - name: anik1999/vote-app
-    newTag: "79da3b7e2dfd25367023e2b86d34d2fc60a6cc78"
+    newTag: "69e2b704ae45ad9527a85e675a0a0186af28b11b"
   - name: anik1999/result-app
-    newTag: "79da3b7e2dfd25367023e2b86d34d2fc60a6cc78"
+    newTag: "69e2b704ae45ad9527a85e675a0a0186af28b11b"
