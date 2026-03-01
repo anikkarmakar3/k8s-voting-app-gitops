@@ -11,6 +11,12 @@ commonLabels:
 
 replicas:
   - name: vote
-    count: 5
+    count: 1
   - name: result
-    count: 3
+    count: 1
+
+images:
+  - name: anik1999/vote-app
+    newTag: "stable"
+  - name: anik1999/result-app
+    newTag: "stable"
