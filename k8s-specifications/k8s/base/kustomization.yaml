@@ -11,3 +11,5 @@ resources:
   - vote-deployment.yaml
   - vote-service.yaml
   - worker-deployment.yaml
+  - vote-hpa.yaml
+  - result-hpa.yaml
