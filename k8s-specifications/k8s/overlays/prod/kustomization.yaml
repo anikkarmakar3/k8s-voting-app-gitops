@@ -3,7 +3,9 @@ kind: Kustomization
 
 resources:
   - ../../base
-
+  - vote-hpa.yaml
+  - result-hpa.yaml
+  
 nameSuffix: -prod
 
 commonLabels:

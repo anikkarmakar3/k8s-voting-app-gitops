@@ -3,6 +3,8 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - vote-hpa.yaml
+  - result-hpa.yaml
 
 nameSuffix: -dev
 
@@ -17,6 +19,6 @@ replicas:
 
 images:
   - name: anik1999/vote-app
-    newTag: "d6f340c02f164dbbec17bbd56afd7787c683eb26"
+    newTag: "4e594279ff3f26af90b04cb5c22ecefcb2dbba2f"
   - name: anik1999/result-app
-    newTag: "d6f340c02f164dbbec17bbd56afd7787c683eb26"
+    newTag: "4e594279ff3f26af90b04cb5c22ecefcb2dbba2f"
